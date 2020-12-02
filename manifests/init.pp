@@ -118,6 +118,7 @@ class letsencrypt (
     path        => $facts['path'],
     environment => concat(["VENV_PATH=${venv_path}"], $environment),
     refreshonly => true,
+    timeout     => 600,
   }
 
   # Used in letsencrypt::certonly Exec["letsencrypt certonly ${title}"]
